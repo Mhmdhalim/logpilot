@@ -1,17 +1,11 @@
 from dataclasses import dataclass
-from datatime import datetime
-from enum import Enum
+from datetime import datetime
 
-class Method(Enum):
-    GET = "GET"
-    POST = "POST"
-    PUT = "PUT"
-    DELETE = "DELETE"
-    
-@dataclass
+
+@dataclass(frozen=True)
 class LogEntry:
     timestamp: datetime
-    method: Method
+    method: str
     path: str
     status: int
     duration_ms: float
