@@ -11,7 +11,7 @@ def parse_log_entry(row: str) -> LogEntry:
     if not isinstance(data, dict):
         raise TypeError(f"Parsed JSON is not a dictionary; expected a {type(data).__name__} with log entry fields.")
     
-    required_fields = ['timestamp', 'method', 'url', 'status_code', 'response_time_ms']
+    required_fields = ['timestamp', 'method', 'status', 'duration_ms', 'path']
     for field in required_fields:
         if field not in data:
             raise KeyError(f"Missing required field: '{field}'")
