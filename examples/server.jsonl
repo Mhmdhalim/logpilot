@@ -1,0 +1,4 @@
+{"timestamp":"2026-11-18T10:00:00Z","method":"GET","path":"/api/users","status":200,"duration_ms":20}
+{"timestamp":"2026-11-18T10:00:01Z","method":"POST","path":"/api/login","status":500,"duration_ms":300}
+{"timestamp":"2026-11-18T10:00:02Z","method":"GET","path":"/api/users","status":404,"duration_ms":40}
+{"timestamp":"2026-11-18T10:00:03Z","method":"GET","path":"/api/users","status":200,"duration_ms":40}

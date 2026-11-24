@@ -1,12 +1,32 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "logpilot"
-version = "0.1.0"
-description = "A python CLI tool for log analysis and visualization"
-requires-python = ">=3.11.9"
+version = "1.0.0"
+description = "Streaming HTTP JSONL log analyzer with a CLI and JSON/CSV reports"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+keywords = ["logs", "cli", "http", "analytics", "observability"]
 dependencies = []
 
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1"]
 
+[project.scripts]
+logpilot = "logpilot.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
